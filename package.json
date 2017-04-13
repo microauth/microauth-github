@@ -1,0 +1,32 @@
+{
+  "name": "microauth-github",
+  "version": "0.0.0",
+  "description": "WIP",
+  "main": "index.js",
+  "scripts": {
+    "example": "micro example.js",
+    "test": "xo"
+  },
+  "files": [
+    "index.js"
+  ],
+  "author": "Dima Paloskin",
+  "license": "MIT",
+  "dependencies": {
+    "micro-redirect": "^1.0.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0",
+    "uuid": "^3.0.1"
+  },
+  "peerDependencies": {
+    "micro": "^7.3.1"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^1.6.0",
+    "xo": "^0.18.1"
+  },
+  "xo": {
+    "spaces": 2,
+    "extends": "prettier"
+  }
+}
