@@ -1,8 +1,10 @@
 # microauth-gituhb
+
 > Github oauth for [micro](https://github.com/zeit/micro/)
 
 [![Build Status](https://travis-ci.org/microauth/microauth-github.svg?branch=master)](https://travis-ci.org/microauth/microauth-github)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![Greenkeeper badge](https://badges.greenkeeper.io/microauth/microauth-github.svg)](https://greenkeeper.io/)
 
 Add [github](https://github.com) authentication to your [micro](https://github.com/zeit/micro/) in few lines of code.
 This module is a part of [microauth](https://github.com/microauth/microauth) collection.
