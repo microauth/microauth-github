@@ -19,6 +19,7 @@ module.exports = githubAuth(async (req, res, auth) => {
 
   if (auth.err) {
     // Error handler
+    console.error(auth.err);
     return send(res, 403, 'Forbidden');
   }
 
