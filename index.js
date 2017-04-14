@@ -5,6 +5,8 @@ const uuid = require('uuid');
 const rp = require('request-promise');
 const redirect = require('micro-redirect');
 
+const provider = 'github';
+
 const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/github', scope = 'user' }) => {
 
   const getRedirectUrl = (state) => {
@@ -23,7 +25,7 @@ const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/gi
         states.push(state);
         return redirect(res, 302, redirectUrl);
       } catch (err) {
-        args.push({ err, provider: 'github' });
+        args.push({ err, provider });
         return fn(req, res, ...args);
       }
     }
@@ -35,7 +37,7 @@ const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/gi
 
         if (!states.includes(state)) {
           const err = new Error('Invalid state');
-          return fn(req, res, { err, provider: 'github' });
+          return fn(req, res, { err, provider });
         }
 
         states.splice(states.indexOf(state), 1);
@@ -54,7 +56,7 @@ const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/gi
         });
 
         if (response.error) {
-          args.push({ err: response.error, provider: 'github' });
+          args.push({ err: response.error, provider });
           return fn(req, res, ...args);
         }
 
@@ -70,7 +72,7 @@ const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/gi
         });
 
         const result = {
-          provider: 'github',
+          provider,
           accessToken,
           info: user
         };
@@ -78,7 +80,7 @@ const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/gi
         args.push({ result });
         return fn(req, res, ...args);
       } catch (err) {
-        args.push({ err, provider: 'github' });
+        args.push({ err, provider });
         return fn(req, res, ...args);
       }
     }
