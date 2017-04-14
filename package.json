@@ -7,6 +7,10 @@
     "example": "micro example.js",
     "test": "xo"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microauth/microauth-github"
+  },
   "files": [
     "index.js"
   ],
