@@ -1,7 +1,7 @@
 {
   "name": "microauth-github",
   "version": "0.0.2",
-  "description": "WIP",
+  "description": "Github oauth for micro",
   "main": "index.js",
   "scripts": {
     "example": "micro example.js",
