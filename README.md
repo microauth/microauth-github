@@ -22,7 +22,7 @@ yarn add microauth-github
 app.js
 ```js
 const { send } = require('micro');
-const microAuthGithub = require('./');
+const microAuthGithub = require('microauth-github');
 
 const options = {
   clientId: 'CLIENT_ID',
