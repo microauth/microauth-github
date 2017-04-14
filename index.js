@@ -16,9 +16,9 @@ const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/gi
   const states = [];
   return fn => async (req, res, ...args) => {
 
-    const parsedUrl = url.parse(req.url);
+    const { pathname, query } = url.parse(req.url);
 
-    if (parsedUrl.pathname === path) {
+    if (pathname === path) {
       try {
         const state = uuid.v4();
         const redirectUrl = getRedirectUrl(state);
@@ -31,9 +31,9 @@ const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/gi
     }
 
     const callbackPath = url.parse(callbackUrl).pathname;
-    if (parsedUrl.pathname === callbackPath) {
+    if (pathname === callbackPath) {
       try {
-        const { state, code } = querystring.parse(parsedUrl.query);
+        const { state, code } = querystring.parse(query);
 
         if (!states.includes(state)) {
           const err = new Error('Invalid state');
