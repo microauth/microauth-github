@@ -37,7 +37,8 @@ const microAuthGithub = ({ clientId, clientSecret, callbackUrl, path = '/auth/gi
 
         if (!states.includes(state)) {
           const err = new Error('Invalid state');
-          return fn(req, res, { err, provider });
+          args.push({ err, provider });
+          return fn(req, res, ...args);
         }
 
         states.splice(states.indexOf(state), 1);
