@@ -1,4 +1,4 @@
-# microauth-gituhb
+# microauth-github
 
 > Github oauth for [micro](https://github.com/zeit/micro/)
 
