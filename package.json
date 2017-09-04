@@ -23,7 +23,7 @@
     "uuid": "^3.0.1"
   },
   "peerDependencies": {
-    "micro": "^7.3.1"
+    "micro": "^8.0.4"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.0.0",
