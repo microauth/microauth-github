@@ -1,5 +1,5 @@
 const { send } = require('micro');
-const microAuthGithub = require('./');
+const microAuthGithub = require('.');
 
 const options = {
   clientId: 'CLIENT_ID',
